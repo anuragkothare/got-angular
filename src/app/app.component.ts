@@ -1,4 +1,10 @@
+import { CardListComponent } from './card-list/card-list.component';
 import { Component } from '@angular/core';
+import { Book } from './book/book';
+import { House } from './house/house'
+import { Character } from './character/character';
+
+import { CardService } from './card.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +13,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  CardService: CardService
+
+
+
 }

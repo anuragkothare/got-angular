@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card col-12 col-md-12 col-lg-12 col-sm-12">
+    <img class="card-img-top" src="../../assets/house.png" alt="Card image cap">
+    <div class="card-body">
+      <h1 class="card-title"> <strong> House Card </strong> </h1>
+      <h2 class="card-text"> House Information </h2>
+      <h5 class="card-text">House name:{{ data.name }}</h5>
+      <h5 class="card-text">House region:{{ data.region }}</h5>
+      <p class="card-text"> Coat of Arms: {{ data.coatOfArms }}</p>
+      <a [routerLink]="['/house', data.id]" class="btn btn-success">More Details...</a>
+      <p class="card-text">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </p>
+    </div>
+    <br>
+  </div>
+  <br>
+  <br>

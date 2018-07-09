@@ -1,0 +1,9 @@
+.book {
+  font-family: 'Economica', sans-serif;
+  background-color: #e4e5e6;
+}
+
+.mt-3, .my-3, .mb-3 {
+  margin-top: 4rem!important;
+  margin-bottom: 4rem!important;
+}

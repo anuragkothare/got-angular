@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.jumbotron{
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  line-height: 3.2;
+  text-align: -webkit-center;
+  margin-bottom: -3.11rem;
+ }

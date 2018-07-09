@@ -1,0 +1,156 @@
+<br>
+<br>
+<br>
+
+<div class="house container mt-3">
+  <img class="mr-3" src="../../assets/house2.png" alt="Generic placeholder image">
+  <div class="media-body" *ngIf="currentHouse$ | async as house">
+    <h2 class="mt-0">House Description:</h2>
+    <div class="text-black text-left">
+      <p class="p-3 border border-black text-truncate"> URL: {{house.url}}</p>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <h3>Name:
+          <strong>{{house.name}}</strong>
+        </h3>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h3>Region:
+          <strong>{{house.region}}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <h3>Coat Of Arms:
+          <strong>{{house.coatOfArms}}</strong>
+        </h3>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h3>Words:
+          <strong>{{house.words}}</strong>
+        </h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div *ngFor='let title of house.titles' class="col-lg-12 col-md-6">
+        <h3>Titles:
+          <strong>{{title}}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor='let seat of house.seats' class="col-lg-12 col-md-6">
+        <h3>Seats:
+          <strong>{{seat}}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <!-- Current Lord -->
+    <div class="row">
+      <h3 class="col-lg-10">Current Lord:</h3>
+      <div class="col-lg-12 col-md-6">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{house.currentLord}}</p>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{house.heir}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="col-lg-10">Over Lord:</h3>
+      <div class="col-lg-12 col-md-6">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{house.overlord}}</p>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- Founded -->
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <h3 *ngIf='house.founded === ""; else elseBlock'>Founded: N/A
+        </h3>
+        <ng-template #elseBlock>
+          Founded:
+          <strong>{{ house.founded }}</strong>
+        </ng-template>
+      </div>
+    </div>
+
+    <!-- Founder -->
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <h3>Founder:
+          <strong>{{house.founder}}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <!-- Died Out -->
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <h3>Died Out:
+          <strong>{{house.diedOut}}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor='let weapon of house.ancestralWeapons' class="col-lg-12 col-md-6">
+        <h3>Ancestral Weapons:
+          <strong>{{weapon}}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <!-- Cadet branches -->
+    <div class="row">
+      <h3 class="col-lg-10">Cadet Branches:</h3>
+      <div *ngIf='house.cadetBranches >= 0'>
+      </div>
+      <div *ngFor='let branch of house.cadetBranches' class="col-lg-12 col-md-6">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{branch}}</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sworn Members -->
+    <div class="row">
+      <h3 class="col-lg-10">Sworn Members:</h3>
+      <div *ngIf='house.swornMembers >= 0'>
+      </div>
+      <div *ngFor='let member of house.swornMembers' class="col-lg-12 col-md-6 col-12">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{member}}</p>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <!-- Back button -->
+    <div class=" container  col-lg-12 col-md-6 button">
+      <p>
+        <button type="button" class="btn btn-primary btn-lg" (click)="goToCards(character)">Back To All Cards</button>
+      </p>
+    </div>
+    <br>
+  </div>

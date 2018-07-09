@@ -1,0 +1,20 @@
+
+
+<div class="container">
+    <div class="card col-12 col-md-12 col-lg-12 col-sm-12">
+      <img class="card-img-top" src="../../assets/char1.png" alt="Card image cap">
+      <div class="card-body">
+        <h2 class="card-title"> <strong> Character Card </strong> </h2>
+        <h4 class="card-text"> Character Information </h4>
+        <p class="card-text">Character name: {{ data.name }}</p>
+        <p class="card-text">Character born: {{ data.born }}</p>
+        <p class="card-text">Character gender: {{ data.gender }}</p>
+        <p class="card-text">Character culture: {{ data.culture }}</p>
+        <a  [routerLink]="['/character', data.id]" class="btn btn-success">More Details...</a>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+      <br>
+</div>
+<br>
+<br>
+

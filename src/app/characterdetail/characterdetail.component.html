@@ -1,0 +1,149 @@
+<br>
+<br>
+<br>
+
+<div class="character container mt-3">
+  <img class="mr-3" src="../../assets/char2.png" alt="Generic placeholder image">
+  <div class="media-body" *ngIf="currentCharacter$ | async as character">
+    <br>
+    <h2 class="mt-0">Character Description:</h2>
+    <div class="text-black text-left">
+      <h4 class="p-3 border border-black text-truncate"> URL: {{character.url}}</h4>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-6 col-sm-12">
+        <h3>Name:
+          <strong> {{ character.name }} </strong>
+        </h3>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <h3>Gender:
+          <strong>{{ character.gender }}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <h3>Born:
+          <strong>{{ character.born }}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-6 col-sm-12">
+        <h3> Culture:
+          <strong>{{ character.culture }}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10 col-md-6">
+        <h3>Titles:
+          <strong>{{ character.titles }}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10 col-md-6">
+        <h3>Aliases:
+          <strong>{{ character.aliases }}</strong>
+        </h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="col-lg-10">Father:</h3>
+      <div class="col-lg-8 col-md-6 col-sm-12">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{character.father}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="col-lg-10">Mother:</h3>
+      <div class="col-lg-8 col-md-6 col-sm-12">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{character.mother}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="col-lg-10">Spouse:</h3>
+      <div class="col-lg-8 col-md-6 col-sm-12">
+        <div class="text-black text-left">
+          <p class="p-3 border border-black text-truncate">{{character.spouse}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="col-lg-10">Allegiances:</h3>
+      <ng-container *ngIf="character.allegiances.length > 0">
+        <ng-container *ngFor="let allegiance of character.allegiances">
+          <div class="text-black text-center">
+            <p class="p-3 border border-black text-truncate">{{allegiance}}</p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div class="row">
+      <h3 class="col-lg-10">Books:</h3>
+      <ng-container *ngIf="character.books.length > 0">
+        <ng-container *ngFor="let book of character.books">
+          <div class="text-black text-center">
+            <p class="p-3 border border-black text-truncate">{{book}}</p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div class="row">
+      <ng-container *ngIf="character.povBooks.length > 0">
+        <ng-container *ngFor="let povbook of character.povBooks">
+          <div class="text-black text-center">
+            <p class="p-3 border border-black text-truncate">{{povbook}}</p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+
+
+
+    <div class="row">
+      <h3 class="col-lg-10">TV Series:</h3>
+      <div class="col-lg-8 col-md-6 col-12">
+        <strong>
+          <h5 *ngFor='let name of character.tvSeries'>{{ name }}</h5>
+        </strong>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-md-6 col-12">
+        <h3 *ngFor='let person of character.playedBy; let first=first; let last=last'>Played By: {{ person }} {{last ? '':', '}}</h3>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <!-- Back button -->
+  <div class=" container  col-lg-12 col-md-6 button">
+      <p>
+          <button  type="button" class="btn btn-primary btn-lg" (click)="goToCards(character)">Back To All Cards</button>
+        </p>
+  </div>
+  <br>
+</div>
+
+
+
+

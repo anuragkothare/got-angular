@@ -1,0 +1,19 @@
+
+.card {
+  border-block-end-style: dotted;
+  border-block-start: 2rem;
+  color: black;
+  background: #eef2f3;
+  font-family: 'Josefin Slab', serif;
+  border-radius: 0.8rem;
+
+}
+
+.btn {
+  text-justify: auto;
+  font-weight: bold;
+}
+
+.card-img-top {
+  width: 15%;
+}

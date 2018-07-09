@@ -1,0 +1,123 @@
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <br>
+      <h1>Game Of Thrones</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div *ngFor="let item of gotItems" >
+
+        <ng-container *ngIf="item.type === 'book';  else otherCard">
+          <div class="card-deck row">
+            <div class="col-md-12">
+                <book [book]= "item"></book>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-template #otherCard>
+          <ng-container *ngIf="item.type === 'house'; else charCard">
+                <house [house]="item"></house>
+
+          </ng-container>
+        </ng-template>
+
+        <ng-template #charCard>
+          <character [character]="item"></character>
+        </ng-template>
+
+      </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="container">
+    <book *ngFor = "let i of books" [book]="i">
+        <h2 *ngIf="i.type === 'book'" [book] = "">Card Type: {{ i.type }} </h2>
+    </book>
+
+    <br>
+    <br>
+
+    <house *ngFor = "let h of houses" [house] = "h">
+        <h2>Card Type: {{ h.type }} </h2>
+    </house>
+
+    <br>
+    <br>
+
+    <character *ngFor = "let c of characters" [character]="c">
+
+
+    </character>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card" style="width: 18rem;" *ngFor="let i of gotItems">
+
+    <div class="card-body" *ngIf="i.type === 'book'">
+      <h5 class="card-title">Item Card</h5>
+      <p class="card-text">Item Type: {{ i.type}}</p>
+
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div> -->
+
+<!-- <div class="card" style="width: 18rem;" *ngFor="let book of books" >
+
+    <div class="card-body">
+      <h5 class="card-title">Book Card</h5>
+      <p class="card-text">Book Name: {{ book.title }}</p>
+      <p class="card-text">Book Author: {{ book.author }}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="card" style="width: 18rem;" *ngFor="let house of houses">
+
+      <div class="card-body">
+        <h5 class="card-title">House Card</h5>
+        <p class="card-text">House Name: {{ house.name}}</p>
+        <p class="card-text">House Region: {{ house.region }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="card" style="width: 18rem;" *ngFor="let character of characters">
+
+        <div class="card-body">
+          <h5 class="card-title">Character Card</h5>
+          <p class="card-text">Character Name: {{ character.name }}</p>
+          <p class="card-text"> {{ character.born }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> -->
+
+
