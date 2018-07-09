@@ -5,7 +5,13 @@
 <div class="book container mt-3">
   <img class="mr-3" src="assets/stark.png" alt="Generic placeholder image">
   <div class="media-body" *ngIf="currentBook$ | async as book">
+
     <h4 class="mt-0">Book Description:</h4>
+
+    <h4>Book URL:
+      <strong>{{ book.url }}</strong>
+    </h4>
+
     <h2>Book Name:
       <strong>{{book.name}}</strong>
     </h2>
