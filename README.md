@@ -1,4 +1,8 @@
-# GotApp
+# Game of thrones Info-App
+Angular Application for getting all the information about Books,Characters,Houses information of Game Of Thrones.
+
+## Live Link
+https://anuragkothare.github.io/got-angular/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
